@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "scheduler2.0",
-    "slug": "scheduler2.0",
+    "slug": "scheduler",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "web": {
+      "name": "CS Course Scheduler",
       "favicon": "./assets/favicon.png"
     }
   }
