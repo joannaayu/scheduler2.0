@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import CourseList from './components/CourseList';
 
 const Banner = ({ title }) => (
-  <Text style={styles.banner}>{ '[loading ...]' }</Text>
+  <Text style={styles.banner}>{ title || '[loading ...]' }</Text>
 );
 
 const App = () => {
