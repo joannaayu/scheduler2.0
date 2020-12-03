@@ -1,19 +1,21 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { useContext, useState, useEffect } from 'react';
+import UserContext from '../UserContext';
 import CourseList from '../components/CourseList';
+import CourseEditScreen from './CourseEditScreen';
 
 const Banner = ({ title }) => (
   <Text style={styles.banner}>{ title || '[loading ...]' }</Text>
 );
 
 const ScheduleScreen = ({navigation}) => {
+  const user = useContext(UserContext);
   const [schedule, setSchedule] = useState({title: '', courses:[] });
+  const canEdit = user && user.role === 'admin';
 
   const view = (course) => {
-    navigation.navigate('CourseDetailScreen', { course });
+    navigation.navigate(canEdit ? 'CourseEditScreen' : 'CourseDetailScreen', { course });
     };
 
   const url = 'https://courses.cs.northwestern.edu/394/data/cs-courses.php';

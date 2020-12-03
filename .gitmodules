@@ -1,0 +1,3 @@
+[submodule "components/components/expo-form-starter"]
+	path = components/components/expo-form-starter
+	url = https://github.com/criesbeck/expo-form-starter.git

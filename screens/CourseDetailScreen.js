@@ -14,7 +14,7 @@ const CourseDetailScreen = ({route}) => {
   const course = route.params.course;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <ScrollView>
         <Field label="ID" value={course.id} />
         <Field label="Meeting times" value={course.meets} />
